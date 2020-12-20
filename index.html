@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOME PAGE</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<script>
+		function loginotpbutton() {
+			var x = document.getElementById("sendotp");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		}
+		function submitotpbutton(){
+			var x = document.getElementById("enterotp");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		}
+	</script>
+</head>
+<body>
+	
+	<header class="px-3 py-4 ">
+		
+			<div class="row row-header">
+				<div class="col-sm-2 align-self-center" style="text-align: center;">
+					<a href="index.html" style="color: aliceblue;"> SportsVilla</a>
+				</div>
+				
+				<div class="offset-sm-3 col-sm-2" style="text-align: center;">
+					<span><strong>SPORTS<img src="img/logo.png" height="31px" width="30px">ILLA</strong></span>
+				</div>
+				
+				<div class="offset-sm-3 col-sm-1 align-self-center" style="text-align: center;" >
+					<div class="dropdown">
+  						<button class="dropbtn"><span class="fa fa-user-o"></span></button>
+  						<div class="dropdown-content">
+							<a data-target="#loginmodal" data-toggle="modal">Login</a>
+							
+    						<a href="#">Support</a>
+    						
+  						</div>
+					</div>
+
+				</div>
+			</div>
+			<div id="loginmodal" class="modal fade" role="dialog">
+				<div class="modal-dialog" role="content">
+					<div class="modal-content">
+						<div class="modal-header" style="background-color: cadetblue;">
+							<h4 class="modal-title text-center col-6 align-self-center" style="color: white;">LOGIN</h4>
+							<div class="vl col-1 d-block justify-content-end"></div>
+							
+							<h4 class="modal-title text-center col-4 align-self-center"><a data-target="#signupmodal" data-toggle="modal" data-dismiss="modal" style="cursor: pointer;">Sign Up</a></h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<form>
+								<div class="form-group row">
+									<label for="username1" class="col-form-label col-sm-5 ">Username</label>
+									<input type="text" placeholder="Username" id="username1" class="col-sm-6 form-control">
+								</div>
+								<div class="form-group row">
+									<label for="password1" class="col-form-label col-sm-5 ">Password</label>
+									<input type="password" placeholder="Password" id="password1" class="col-sm-6 form-control">
+								</div>
+								<div class="form-group row">
+									<div class="form-check offset-sm-1">
+										<input class="form-check-input" type="checkbox">
+										<label class="form-check-label"> Remember me
+										</label>
+									</div>
+								</div>
+								<div class="form-group row">
+									<a href="forgetpass.html" class="align-self-center col-sm-4 text-center">Forget password?</a>
+									<button class="btn btn-primary offset-sm-4 col-sm-3 text-center" type="submit" >Submit</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="signupmodal" role="dialog">
+				<div class="modal-dialog " role="content">
+					<div class="modal-content">
+						<div class="modal-header" style="background-color: cadetblue;">
+							<!-- <a data-target="#loginmodal" data-toggle="modal" data-dismiss="modal">Login</a> -->
+							<h4 class="modal-title text-center col-6 align-self-center"><a data-target="#loginmodal" data-toggle="modal" data-dismiss="modal" style="cursor: pointer;">Login</a></h4>
+							<div class="vl col-1 d-block justify-content-end"></div>
+							
+							<h4 class="modal-title text-center col-4 align-self-center" style="color: white;">Signup</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<form>
+								<div class="form-group row">
+									<label for="username" class="col-form-label col-sm-5">UserName</label>
+									<input type="text" placeholder="Username"id="username" class="col-sm-6 form-control">
+								</div>
+								<div class="form-group row">
+									<label for="email1" class="col-form-label col-sm-5">Email</label>
+									<input type="email" placeholder="Email"id="email1" class="col-sm-6 form-control">
+								</div>
+								<div class="form-group row">
+									<button class="btn btn-primary offset-sm-4 col-sm-3 text-center" type="button"  onclick="loginotpbutton()">Send OTP</button>
+								</div>
+								<div id="sendotp" style="display:none;">
+									<div class="form-group row">
+									<label for="otpnum" class="col-form-label col-sm-5">OTP</label>
+									<input type="text" placeholder="OTP"id="otpnum" class="col-sm-6 form-control">
+								</div>
+									<div class="form-group row">
+										<button class="btn btn-primary offset-sm-4 col-sm-3 text-center" type="button"  onclick="submitotpbutton()">SUBMIT OTP</button>
+									</div>
+								</div>
+								<div id="enterotp" style="display:none;">
+								<div class="form-group row">
+									<label for="password2" class="col-form-label col-sm-5">Password</label>
+									<input type="password" placeholder="Password" id="password2" class="col-sm-6 form-control">
+								</div>
+								<div class="form-group row">
+									<label for="password3" class="col-form-label col-sm-5">Confirm Password</label>
+									<input type="password" placeholder="Confirm Password" id="password3" class="col-sm-6 form-control">
+								</div>
+								<div class="form-group row">
+									
+									<button class="btn btn-primary offset-sm-4 col-sm-3 text-center" type="submit" >Submit</button>
+								</div>
+									</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+	
+			<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark " style="background-color: yellowgreen;">
+				<div class="container">
+				  
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse" id="main_nav">	
+					<ul class="navbar-nav col-sm-12">
+					  <li class="nav-item col-sm-2"><a class="nav-link" href="index.html" > Home </a></li>
+					  <li class="nav-item col-sm-2"><a class="nav-link" href="products.html"> Mens </a></li>
+					  <li class="nav-item col-sm-2"><a class="nav-link" href="#"> Womens </a></li>
+					  <li class="nav-item col-sm-2"><a class="nav-link" href="#"> Kids </a></li>
+					  <li class="nav-item col-sm-2"><a class="nav-link" href="#"> Cart </a></li>
+					  <li class="nav-item col-sm-2">
+						<form>
+							<div class="form-group row">
+								<input type="text" class="form-control col-5 col-sm-8">
+								<button class="btn btn-primary"><span class="fa fa-search"></span></button>
+							</div>
+						</form>
+					  </li>
+					</ul>
+				  </div> <!-- navbar-collapse.// -->
+				</div> <!-- container.// -->
+				</nav>
+			</header>
+
+	<div class="mx-auto mt-3">
+		<div class="row row-content" style="margin-right: 0px; margin-left: 0px;">
+			<div class=" col">
+				<div class="carousel slide"  data-ride="carousel" id="mycarousel">
+					<div class="carousel-inner" role="listbox">
+						<div class="carousel-item active">
+							<img src="https://m.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/09/24/Pictures/file-photo-pakistan-cricket-world-cup-india_baa3875a-de87-11e9-93be-d8edb8f85faf.jpg" class="d-block img-fluid " alt="CRICKET">
+							<div class="carousel-caption d-none d-md-block ">CRICKET</div>	
+						</div>
+						<div class="carousel-item"  >
+							<img src="img/foot.jpg" class="d-block img-fluid" alt="FOOT BALL">
+							<div class="carousel-caption d-none d-md-block ">FOOT BALL</div>
+						</div>
+						<div class="carousel-item"  >
+							<img src="https://thebridge.in/wp-content/uploads/2020/03/BWF-696x364.jpg" class="d-block img-fluid" alt="BADMINTON">
+							<div class="carousel-caption d-none d-md-block ">BADMINTON</div>
+						</div>
+						<div class="carousel-item">
+							<img src="https://cdn.wallpapersafari.com/69/74/5rjSna.jpg" class="d-block img-fluid" alt="Tennis">
+							<div class="carousel-caption d-none d-md-block ">TENNIS</div>
+						</div>
+						<ol class="carousel-indicators">
+							<li class="active" data-slide-to="0" data-target="#mycorosuel"></li>
+							<li data-slide-to="1" data-target="#mycorosuel"></li>
+							<li data-slide-to="2" data-target="#mycorosuel"></li>
+							<li data-slide-to="3" data-target="#mycarousel"></li>
+						</ol>
+						<a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class=" mt-5 mb-5">
+		<div class="row row-content" style="margin-right: 0px; margin-left: 0px;">
+			<div class="col-sm-6 mb-2">
+				<img src="https://media-eng.dhakatribune.com/uploads/2020/04/seh3nsg4rmiv2s6srjpy-1587396515663.jfif" style="height: 20%; width: 100%;" class=" mx-auto d-block img-fluid" alt="CRICKET">
+			</div>
+			<div class="col-sm-6 mb-2">
+				<img src="https://www.wallpapertip.com/wmimgs/228-2286285_football-picture.jpg" style="height: 20%; width: 100%;" class="mx-auto d-block img-fluid" alt="FOOT BALL">
+			</div>
+			<div class="col-sm-6 mb-2">
+				<img src="https://www.khelmart.com/Cricket/zoomer_Image/JT_BR_0003_S_large.jpg" style="height: 20%; width: 100%;" class="mb-1 mr-auto mx-auto d-block img-fluid" alt="BADMINTON">
+			</div>
+			<div class="col-sm-6 mb-2">
+				<img src="https://tse4.mm.bing.net/th?q=tennis+wallpaper" style="height: 20%; width: 100%;" class="mb-1 mx-auto d-block img-fluid" alt="TENNIS">
+			</div>
+		</div>
+	</div>
+	
+	<footer style="background-color: lightslategray;" >
+		<div class="container">
+			<div class="mx-auto mt-3">
+				<div class="row row-content " style="margin-right: 0px; margin-left: 0px;">
+					<div class=" col">
+						<div class="carousel slide mt-3"  data-ride="carousel" id="mycarousel1">
+							<div class="carousel-inner" role="listbox">
+								<div class="carousel-item active">
+									<img src="https://simpletexting.com/wp-content/uploads/2020/08/customer-service-review.png" class="d-block img-fluid imgcour" alt="COMMENT">
+								</div>
+								<div class="carousel-item"  >
+									<img src="img/foot.jpg" class="d-block img-fluid imgcour" alt="FOOT BALL">
+									<div class="carousel-caption d-none d-md-block ">FOOT BALL</div>
+								</div>
+								<div class="carousel-item"  >
+									<img src="img/car.jpeg" class="d-block img-fluid imgcour" alt="CARROM">
+									<div class="carousel-caption d-none d-md-block ">CARROM</div>
+								</div>
+								<div class="carousel-item">
+									<img src="img/kabaddi.jpg" class="d-block img-fluid imgcour" alt="CARROM">
+									<div class="carousel-caption d-none d-md-block ">KABADDI</div>
+								</div>
+								<ol class="carousel-indicators">
+									<li class="active" data-slide-to="0" data-target="#mycorosuel"></li>
+									<li data-slide-to="1" data-target="#mycorosuel"></li>
+									<li data-slide-to="2" data-target="#mycorosuel"></li>
+									<li data-slide-to="3" data-target="#mycarousel"></li>
+								</ol>
+								<a class="carousel-control-prev" href="#mycarousel1" role="button" data-slide="prev">
+									<span class="carousel-control-prev-icon"></span>
+								</a>
+								<a class="carousel-control-next" href="#mycarousel1" role="button" data-slide="next">
+									<span class="carousel-control-next-icon"></span>
+								</a>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="row text-center mt-4">
+				<p class="justify-content-center">Sport includes all forms of competitive physical activity or games which,[1] through casual or organized participation, at least in part aim to use, maintain or improve physical ability and skills while providing enjoyment to participants, and in some cases, entertainment for spectators.[2] Sports can bring positive results to one's physical health. Hundreds of sports exist, from those between single contestants, through to those with hundreds of simultaneous participants, either in teams or competing as individuals. In certain sports such as racing, many contestants may compete, simultaneously or consecutively, with one winner; in others, the contest (a match) is between two sides, each attempting to exceed the other. Some sports allow a "tie" or "draw", in which there is no single winner; others provide tie-breaking methods to ensure one winner and one loser. A number of contests may be arranged in a tournament producing a champion. Many sports leagues make an annual champion by arranging games in a regular sports season, followed in some cases by playoffs.</p>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 align-self-center text-center">
+					<h4>Links</h4>
+					<ul class="list-unstyled">
+						<li><a class="" href="index.html">Home</a></li>
+						<li><a class="" href="#">About Us</a></li>
+						<li><a class="" href="#">Contact</a></li>
+						<li><a class="" href="#">Cart</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-6 align-self-center">
+					<div class="text-center">
+						<a class="btn btn-social-icon btn-google" href="http://google.com/"><span class="fa fa-google"></span></a>
+						<a class="btn btn-social-icon btn-facebook" href="http://facebook.com/"><span class="fa fa-facebook"></span></a>
+						<a class="btn btn-social-icon btn-twitter" href="htt[://twitter.com/"><span class="fa fa-twitter"></span></a>
+						<a class="btn btn-social-icon" href="mailto:m.muniprasanna@gmail.com"><span class="fa fa-envelope"></span></a>
+					</div>
+				</div>
+			</div>
+				<div class="row align-self-center ">
+					<p class="text-center col-sm-12">© Copyright @ Sports</p>
+				</div>
+			
+		</div>
+	</footer>
+	<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+	<script src="node_modules/popper.js/dist/popper.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
